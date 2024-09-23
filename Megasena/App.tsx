@@ -17,18 +17,21 @@ export default function App() {
 
   // Função para gerar os números da mega-sena
   const generateRandomNumbers = () => {
-    let numbers = [];
-    while (numbers.length < 6) {
-      let randomNum = Math.floor(Math.random() * 60) + 1;
-      if (!numbers.includes(randomNum)) {
-        numbers.push(randomNum);
+    if (userNumbers.length < 6) {
+      Alert.alert("Erro", "Selecione 6 números para realizar o sorteio")
+    } else {
+      let numbers = [];
+      while (numbers.length < 6) {
+        let randomNum = Math.floor(Math.random() * 60) + 1;
+        if (!numbers.includes(randomNum)) {
+          numbers.push(randomNum);
+        }
       }
+      setDrawnNumbers(numbers);
+      checkResult(userNumbers, numbers);
     }
-    setDrawnNumbers(numbers);
-    checkResult(userNumbers, numbers);
   };
 
-  // Função para verificar o resultado
   const checkResult = (userNums, drawnNums) => {
     const matches = userNums.filter((num) => drawnNums.includes(num)).length;
 
