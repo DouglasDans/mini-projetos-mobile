@@ -4,9 +4,13 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     gap: 16,
-    padding: 16,
     backgroundColor: "#242424",
     borderRadius: 16,
+    marginTop: 12,
+    marginBottom: 12,
+    borderBottomColor: "#790DB6", // Roxo
+    borderBottomWidth: 2, // Tamanho da sombra
+    padding: 16,
   },
   image: {
     width: "auto",

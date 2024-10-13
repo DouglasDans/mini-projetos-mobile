@@ -10,7 +10,7 @@ type Props = {
 
 export default function GameCard({ game, navigation }: Props) {
   return (
-    <TouchableOpacity onPress={() => { navigation.navigate("Details") }} style={styles.container}>
+    <TouchableOpacity onPress={() => { navigation.navigate("Details", { gameId: game.id }) }} style={styles.container}>
       <Image style={styles.image} source={{ uri: game.thumbnail }} />
       <View style={styles.content}>
         <Text style={styles.h1}>{game.title}</Text>
